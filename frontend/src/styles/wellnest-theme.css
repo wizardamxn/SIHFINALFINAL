@@ -1,0 +1,148 @@
+/* ====================================WELLNEST COLOR PALETTE & CSS THEME==================================== */
+:root {
+  /* Primary Brand Colors */
+  --primary-teal: #00373E;
+  --primary-teal-dark: #004a52;
+  --primary-teal-light: #2a5a61;
+
+  /* New Vibrant Accent Colors from Design */
+  --accent-orange: #FF6B35;        /* Vibrant orange from hexagon */
+  --accent-orange-light: #FF8A5C;
+  --accent-orange-dark: #E55A2E;
+
+  --accent-pink: #FF8FA3;          /* Soft pink from circles */
+  --accent-pink-light: #FFA8B8;
+  --accent-pink-dark: #E67B8F;
+
+  --accent-turquoise: #4ECDC4;     /* Bright turquoise */
+  --accent-turquoise-light: #6FD7CF;
+  --accent-turquoise-dark: #3FB3AC;
+
+  --accent-green: #45B7B8;         /* Complementary green */
+  --accent-green-light: #66C7C8;
+  --accent-green-dark: #3A9A9B;
+
+  --accent-coral: #F38BA8;         /* Coral pink */
+  --accent-coral-light: #F5A1BB;
+  --accent-coral-dark: #E07695;
+
+  /* Background Colors */
+  --bg-cream: #F7F6F4;             /* Main background */
+  --bg-white: #FFFFFF;
+  --bg-light-gray: #F8F9FA;
+  --bg-gray-50: #F9FAFB;
+  --bg-gray-100: #F3F4F6;
+
+  /* Text Colors */
+  --text-primary: #00373E;
+  --text-secondary: #64748B;
+  --text-muted: #94A3B8;
+  --text-white: #FFFFFF;
+  --text-dark: #1E293B;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #00373E 0%, #004a52 100%);
+  --gradient-vibrant: linear-gradient(135deg, #FF6B35 0%, #FF8FA3 50%, #4ECDC4 100%);
+  --gradient-soft: linear-gradient(135deg, #FF8FA3 0%, #4ECDC4 100%);
+  --gradient-warm: linear-gradient(135deg, #FF6B35 0%, #F38BA8 100%);
+  --gradient-cool: linear-gradient(135deg, #4ECDC4 0%, #45B7B8 100%);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+  --shadow-colored: 0 10px 25px -5px rgba(255, 107, 53, 0.2);
+
+  /* Border Radius */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+  --radius-full: 9999px;
+}
+
+/* ====================================ANIMATIONS==================================== */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+@keyframes pulse-color {
+  0%, 100% { background: var(--accent-orange); }
+  33% { background: var(--accent-pink); }
+  66% { background: var(--accent-turquoise); }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes bounce-in {
+  0% { transform: scale(0.3) rotate(-10deg); opacity: 0; }
+  50% { transform: scale(1.05) rotate(5deg); }
+  70% { transform: scale(0.9) rotate(-2deg); }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+@keyframes slide-up {
+  0% { transform: translateY(100px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes wiggle {
+  0%, 7% { transform: rotateZ(0); }
+  15% { transform: rotateZ(-15deg); }
+  20% { transform: rotateZ(10deg); }
+  25% { transform: rotateZ(-10deg); }
+  30% { transform: rotateZ(6deg); }
+  35% { transform: rotateZ(-4deg); }
+  40%, 100% { transform: rotateZ(0); }
+}
+
+/* ====================================UTILITY CLASSES==================================== */
+.bg-accent-orange { background-color: var(--accent-orange); }
+.bg-accent-pink { background-color: var(--accent-pink); }
+.bg-accent-turquoise { background-color: var(--accent-turquoise); }
+.bg-accent-green { background-color: var(--accent-green); }
+.bg-accent-coral { background-color: var(--accent-coral); }
+
+.text-accent-orange { color: var(--accent-orange); }
+.text-accent-pink { color: var(--accent-pink); }
+.text-accent-turquoise { color: var(--accent-turquoise); }
+
+.border-accent-orange { border-color: var(--accent-orange); }
+.border-accent-pink { border-color: var(--accent-pink); }
+.border-accent-turquoise { border-color: var(--accent-turquoise); }
+
+.gradient-text {
+  background: var(--gradient-vibrant);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+.floating-shape {
+  animation: float 6s ease-in-out infinite;
+}
+
+.pulse-colors {
+  animation: pulse-color 3s ease-in-out infinite;
+}
+
+.bounce-in {
+  animation: bounce-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.slide-up {
+  animation: slide-up 0.8s ease-out;
+}
+
+.wiggle {
+  animation: wiggle 2s ease-in-out infinite;
+}
