@@ -31,8 +31,10 @@ import {
   Users,
   ThumbsUp,
   Eye,
-  Share2
+  Share2,
+  Book
 } from 'lucide-react';
+import MoodJournal from '@/components/Journal';
 
 // Enhanced interfaces for mental health data
 interface MoodEntry {
@@ -506,7 +508,8 @@ const ProfileSection: React.FC = () => {
               { id: 'metrics', label: 'Health Metrics', icon: <Heart size={18} /> },
               { id: 'sessions', label: 'Counseling', icon: <Calendar size={18} /> },
               { id: 'posts', label: 'My Posts', icon: <MessageCircle size={18} /> },
-              { id: 'goals', label: 'Goals', icon: <Target size={18} /> }
+              { id: 'goals', label: 'Goals', icon: <Target size={18} /> },
+              { id: 'journal', label: 'Journal', icon: <Book size={18} /> }
             ].map((tab) => (
               <button
                 key={tab.id}
@@ -1200,6 +1203,7 @@ const ProfileSection: React.FC = () => {
             </div>
           </div>
         )}
+        {activeTab === 'journal' && (<div><MoodJournal/></div>)}
       </div>
 
       {/* ✅ ADDED: Modal Components */}

@@ -13,6 +13,10 @@ import Bot from "./pages/Bot";
 import NotFound from "./pages/NotFound";
 import Female from "./pages/Female";
 import ScrollToTop from "./components/ScrollToTop";
+import GamifiedChallenges from "./pages/Gamified";
+import EmergencyPage from "./pages/Emergency";
+import CollegeDashboard from "./pages/College";
+import CopingStrategies from "./pages/Coping";
 
 function App() {
   return (
@@ -20,6 +24,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/gamified" element={<GamifiedChallenges />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/screening" element={<Screening />} />
         <Route path="/community" element={<CommunityChat />} />
@@ -27,9 +32,12 @@ function App() {
         <Route path="/music" element={<SpotifyMusicDeluxe />} />
         <Route path="/nearme" element={<MapView/>} />
         <Route path="/female" element={<Female />} />
+        <Route path="/emergency" element={<EmergencyPage />} />
         <Route path="/login" element={<LoginPage/>} />
         <Route path="/resources" element={<MentalHealthResources/>} />
         <Route path="/bot" element={<Bot/>} />
+        <Route path="/coping" element={<CopingStrategies/>} />
+        <Route path="/college" element={<CollegeDashboard/>} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
