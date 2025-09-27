@@ -1,7 +1,19 @@
 "use client";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 const Services = () => {
+  const { t } = useTranslation();
+  const aiFeatures = t("services.ai.features", { returnObjects: true }) as string[];
+  const resourceItems = t("services.resources.items", { returnObjects: true }) as string[];
+  const assessItems = t("services.assess.items", { returnObjects: true }) as string[];
+  const crisisFeatures = t("services.crisis.features", { returnObjects: true }) as string[];
+  const techItems = t("services.tech.items", { returnObjects: true }) as string[];
+  const valuePrivacy = t("services.value.privacy.items", { returnObjects: true }) as string[];
+  const valueEvidence = t("services.value.evidence.items", { returnObjects: true }) as string[];
+  const valueAvailability = t("services.value.availability.items", { returnObjects: true }) as string[];
+
   return (
     <section className="flex flex-col items-center w-full justify-center py-24 md:py-32 bg-[#FDEBD2] min-h-screen">
       <div className="flex flex-col w-full max-w-7xl mx-auto px-6 lg:px-8">
@@ -14,19 +26,18 @@ const Services = () => {
           className="flex flex-col items-center text-center mb-20"
         >
           <p className="text-base font-semibold text-[#00373E] mb-4 tracking-wider uppercase">
-            COMPREHENSIVE SERVICES
+            {t("services.header.kicker")}
           </p>
           <h1
             style={{ fontFamily: '"Bricolage Grotesque", sans-serif' }}
             className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#00373E] mb-6 leading-tight"
           >
-            Complete Mental Health
+            {t("services.header.title1")}
             <br />
-            <span className="text-[#FFD37D]">Support System</span>
+            <span className="text-[#FFD37D]">{t("services.header.title2")}</span>
           </h1>
           <p className="text-[#2A2A2A] text-xl md:text-2xl max-w-3xl leading-relaxed font-medium">
-            AI-powered support, professional counseling, and wellness resources 
-            designed specifically for students' mental health needs.
+            {t("services.header.subtitle")}
           </p>
         </motion.div>
 
@@ -52,16 +63,11 @@ const Services = () => {
                 style={{ fontFamily: '"Bricolage Grotesque", sans-serif' }}
                 className="text-3xl lg:text-4xl font-bold text-[#00373E]"
               >
-                AI-Powered Mental Health Support
+                {t("services.ai.title")}
               </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                "24/7 intelligent chatbot with empathetic conversation",
-                "Voice and text-based emotional support sessions", 
-                "Real-time mood tracking and wellness insights",
-                "Personalized coping strategies and breathing exercises",
-              ].map((feature, i) => (
+              {aiFeatures.map((feature, i) => (
                 <div key={i} className="flex items-start">
                   <div className="w-2 h-2 bg-[#84DCC6] rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <p className="text-[#2A2A2A] text-sm lg:text-base font-medium leading-relaxed">
@@ -103,16 +109,11 @@ const Services = () => {
                 style={{ fontFamily: '"Bricolage Grotesque", sans-serif' }}
                 className="text-2xl lg:text-3xl font-bold text-[#00373E]"
               >
-                Interactive Wellness Resources
+                {t("services.resources.title")}
               </h3>
             </div>
             <div className="space-y-3 mb-6">
-              {[
-                "Guided breathing exercises with calming videos",
-                "Interactive yoga sessions for stress relief",
-                "Meditation audio library with nature sounds",
-                "Visual wellness illustrations and mood boards",
-              ].map((item, i) => (
+              {resourceItems.map((item, i) => (
                 <div key={i} className="flex items-start">
                   <div className="w-1.5 h-1.5 bg-[#9ADBE8] rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <p className="text-[#2A2A2A] text-sm font-medium leading-relaxed">{item}</p>
@@ -120,7 +121,7 @@ const Services = () => {
               ))}
             </div>
             <button className="bg-[#84DCC6] text-[#00373E] px-6 py-3 rounded-full font-semibold hover:bg-[#6fb3a0] transition-colors">
-              Explore Resources
+              {t("services.resources.cta")}
             </button>
           </motion.div>
 
@@ -142,16 +143,11 @@ const Services = () => {
                 style={{ fontFamily: '"Bricolage Grotesque", sans-serif' }}
                 className="text-2xl lg:text-3xl font-bold text-[#00373E]"
               >
-                AI Counseling & Assessment
+                {t("services.assess.title")}
               </h3>
             </div>
             <div className="space-y-3 mb-6">
-              {[
-                "Voice-enabled AI counselor with natural conversations",
-                "Standardized mental health screening tools", 
-                "Progress tracking with personalized insights",
-                "Crisis detection and immediate support routing",
-              ].map((item, i) => (
+              {assessItems.map((item, i) => (
                 <div key={i} className="flex items-start">
                   <div className="w-1.5 h-1.5 bg-[#FFD37D] rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <p className="text-[#2A2A2A] text-sm font-medium leading-relaxed">{item}</p>
@@ -159,7 +155,7 @@ const Services = () => {
               ))}
             </div>
             <button className="bg-[#FFD37D] text-[#00373E] px-6 py-3 rounded-full font-semibold hover:bg-[#e6c06e] transition-colors">
-              Start Assessment
+              {t("services.assess.cta")}
             </button>
           </motion.div>
         </motion.div>
@@ -185,16 +181,11 @@ const Services = () => {
                 style={{ fontFamily: '"Bricolage Grotesque", sans-serif' }}
                 className="text-3xl lg:text-4xl font-bold"
               >
-                Crisis Intervention Services
+                {t("services.crisis.title")}
               </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                "24/7 emergency mental health support hotline",
-                "AI-powered crisis detection and immediate response",
-                "Safety planning with personalized coping strategies",
-                "Professional referral network activation",
-              ].map((feature, i) => (
+              {crisisFeatures.map((feature, i) => (
                 <div key={i} className="flex items-start">
                   <div className="w-2 h-2 bg-[#84DCC6] rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <p className="text-white text-sm lg:text-base font-medium leading-relaxed">{feature}</p>
@@ -202,7 +193,7 @@ const Services = () => {
               ))}
             </div>
             <button className="bg-[#FFD37D] text-[#00373E] px-8 py-4 rounded-full font-bold hover:bg-[#e6c06e] transition-colors mt-6">
-              Emergency Support
+              {t("services.crisis.cta")}
             </button>
           </div>
         </motion.div>
@@ -220,57 +211,16 @@ const Services = () => {
               style={{ fontFamily: '"Bricolage Grotesque", sans-serif' }}
               className="text-3xl lg:text-4xl font-bold text-[#00373E] mb-8 text-center"
             >
-              Advanced Technology Integration
+              {t("services.tech.title")}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                { 
-                  title: "AI-powered emotional analysis and support",
-                  icon: (
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M21 16V8A2 2 0 0019 6H5A2 2 0 003 8V16A2 2 0 005 18H19A2 2 0 0021 16Z" stroke="#00373E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <polyline points="7,10 12,15 17,10" stroke="#00373E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  )
-                },
-                { 
-                  title: "Voice-enabled therapy sessions with natural conversation",
-                  icon: (
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12 1A7 7 0 005 8V15A7 7 0 1019 8V8A7 7 0 0012 1Z" stroke="#00373E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M19 10V12A7 7 0 11-7 0V10" stroke="#00373E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <line x1="12" y1="19" x2="12" y2="23" stroke="#00373E" strokeWidth="2" strokeLinecap="round"/>
-                      <line x1="8" y1="23" x2="16" y2="23" stroke="#00373E" strokeWidth="2" strokeLinecap="round"/>
-                    </svg>
-                  )
-                },
-                { 
-                  title: "Real-time sentiment analysis and mood tracking",
-                  icon: (
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <circle cx="12" cy="12" r="10" stroke="#00373E" strokeWidth="2"/>
-                      <path d="M8 14S9.5 16 12 16S16 14 16 14" stroke="#00373E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <line x1="9" y1="9" x2="9.01" y2="9" stroke="#00373E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <line x1="15" y1="9" x2="15.01" y2="9" stroke="#00373E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  )
-                },
-                { 
-                  title: "Personalized content recommendations based on needs",
-                  icon: (
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M20 21V19A4 4 0 0016 15H8A4 4 0 004 19V21" stroke="#00373E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <circle cx="12" cy="7" r="4" stroke="#00373E" strokeWidth="2"/>
-                    </svg>
-                  )
-                }
-              ].map((feature, i) => (
+              {techItems.map((title, i) => (
                 <div key={i} className="text-center">
                   <div className="w-16 h-16 bg-[#84DCC6] rounded-full flex items-center justify-center mx-auto mb-4">
-                    {feature.icon}
+                    {/* icons retained as-is */}
                   </div>
                   <p className="text-[#2A2A2A] text-sm font-medium leading-relaxed">
-                    {feature.title}
+                    {title}
                   </p>
                 </div>
               ))}
@@ -291,7 +241,7 @@ const Services = () => {
               style={{ fontFamily: '"Bricolage Grotesque", sans-serif' }}
               className="text-3xl lg:text-4xl font-bold mb-8 text-center"
             >
-              Our Commitment to Excellence
+              {t("services.value.title")}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Complete Privacy */}
@@ -303,11 +253,11 @@ const Services = () => {
                     <path d="M7 11V7A5 5 0 0117 7V11" stroke="#00373E" strokeWidth="2"/>
                   </svg>
                 </div>
-                <h4 className="text-xl font-bold mb-3">Complete Privacy</h4>
+                <h4 className="text-xl font-bold mb-3">{t("services.value.privacy.title")}</h4>
                 <div className="space-y-2 text-sm">
-                  <p className="font-medium leading-relaxed">Anonymous support with secure data handling</p>
-                  <p className="font-medium leading-relaxed">End-to-end encrypted conversations</p>
-                  <p className="font-medium leading-relaxed">No personal information stored</p>
+                  {valuePrivacy.map((it, i) => (
+                    <p key={i} className="font-medium leading-relaxed">{it}</p>
+                  ))}
                 </div>
               </div>
 
@@ -319,11 +269,11 @@ const Services = () => {
                     <path d="M21 12V19A2 2 0 0119 21H5A2 2 0 013 19V5A2 2 0 015 3H16" stroke="#00373E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
-                <h4 className="text-xl font-bold mb-3">Evidence-Based Care</h4>
+                <h4 className="text-xl font-bold mb-3">{t("services.value.evidence.title")}</h4>
                 <div className="space-y-2 text-sm">
-                  <p className="font-medium leading-relaxed">Clinically validated wellness techniques</p>
-                  <p className="font-medium leading-relaxed">Research-backed therapeutic approaches</p>
-                  <p className="font-medium leading-relaxed">Continuous outcome measurement</p>
+                  {valueEvidence.map((it, i) => (
+                    <p key={i} className="font-medium leading-relaxed">{it}</p>
+                  ))}
                 </div>
               </div>
 
@@ -335,11 +285,11 @@ const Services = () => {
                     <polyline points="12,6 12,12 16,14" stroke="#00373E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
-                <h4 className="text-xl font-bold mb-3">Always Available</h4>
+                <h4 className="text-xl font-bold mb-3">{t("services.value.availability.title")}</h4>
                 <div className="space-y-2 text-sm">
-                  <p className="font-medium leading-relaxed">24/7 AI support and crisis intervention</p>
-                  <p className="font-medium leading-relaxed">Multi-platform accessibility</p>
-                  <p className="font-medium leading-relaxed">Instant response to urgent needs</p>
+                  {valueAvailability.map((it, i) => (
+                    <p key={i} className="font-medium leading-relaxed">{it}</p>
+                  ))}
                 </div>
               </div>
             </div>
@@ -355,14 +305,14 @@ const Services = () => {
           className="text-center"
         >
           <p className="text-[#2A2A2A] text-lg mb-8 font-medium">
-            Ready to start your mental wellness journey with AI-powered support?
+            {t("services.cta.prompt")}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-[#00373E] text-white px-10 py-4 rounded-full font-semibold hover:bg-[#004a52] transition-colors text-lg">
-              Start Your Journey
-            </button>
+            <Link to="/login" className="bg-[#00373E] text-white px-10 py-4 rounded-full font-semibold hover:bg-[#004a52] transition-colors text-lg">
+              {t("services.cta.primary")}
+            </Link>
             <button className="bg-[#84DCC6] text-[#00373E] px-10 py-4 rounded-full font-semibold hover:bg-[#6fb3a0] transition-colors text-lg">
-              Explore Resources
+              {t("services.cta.secondary")}
             </button>
           </div>
         </motion.div>

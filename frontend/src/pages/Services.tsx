@@ -1,9 +1,23 @@
 "use client";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+import LanguageMenuButton from "@/components/LanguageMenuButton";
 
 const ServicesPage = () => {
+  const { t } = useTranslation();
+
+  const challenges = t("servicesPage.challenge.items", { returnObjects: true }) as string[];
+  const solutions = t("servicesPage.solution.items", { returnObjects: true }) as string[];
+  const coreCards = t("servicesPage.core.cards", { returnObjects: true }) as { icon: string; title: string; description: string; color: string; features: string[]; }[];
+  const whyCards = t("servicesPage.why.cards", { returnObjects: true }) as { icon: string; title: string; description: string; color: string; }[];
+
   return (
     <div className="bg-[#F7F6F4] min-h-screen">
+      {/* Floating language button */}
+      <div className="fixed right-4 top-24 z-40">
+        <LanguageMenuButton />
+      </div>
+
       {/* Hero Section - Inspired by your home page */}
       <section className="w-full min-h-screen flex items-center justify-center px-4">
         <motion.div
@@ -28,7 +42,7 @@ const ServicesPage = () => {
             }}
             className="text-lg md:text-xl text-gray-600 font-normal"
           >
-            Comprehensive Mental Health Platform
+            {t("servicesPage.hero.kicker")}
           </motion.p>
 
           {/* Main headline */}
@@ -39,7 +53,7 @@ const ServicesPage = () => {
             }}
             className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl"
           >
-            Support for Every
+            {t("servicesPage.hero.title1")}
           </motion.span>
 
           <motion.span
@@ -49,7 +63,7 @@ const ServicesPage = () => {
             }}
             className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-[#FF6B35]"
           >
-            Student's Journey
+            {t("servicesPage.hero.title2")}
           </motion.span>
 
           {/* Subtext */}
@@ -57,9 +71,7 @@ const ServicesPage = () => {
             variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
             className="text-base md:text-lg lg:text-xl font-normal text-gray-700 max-w-4xl leading-relaxed"
           >
-            From AI-powered crisis support to confidential counseling sessions,
-            we're building a comprehensive digital platform that understands the
-            unique mental health challenges faced by Indian college students.
+            {t("servicesPage.hero.subtitle")}
           </motion.p>
 
           {/* CTA Button */}
@@ -70,7 +82,7 @@ const ServicesPage = () => {
             }}
             className="rounded-full mt-10 text-white text-lg font-bold px-8 py-4 bg-[#00373E] hover:scale-110 transition-transform"
           >
-            Explore Our Services
+            {t("servicesPage.hero.cta")}
           </motion.button>
         </motion.div>
       </section>
@@ -90,23 +102,18 @@ const ServicesPage = () => {
               style={{ fontFamily: '"Bricolage Grotesque", sans-serif' }}
               className="text-lg md:text-xl text-gray-600 mb-4"
             >
-              The Challenge
+              {t("servicesPage.challenge.title")}
             </p>
 
             <h2
               style={{ fontFamily: '"Bricolage Grotesque", sans-serif' }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[#00373E]"
             >
-              Mental Health Crisis in Higher Education
+              {t("servicesPage.challenge.heading")}
             </h2>
 
             <div className="space-y-4 mb-8">
-              {[
-                "Rising anxiety and depression among students",
-                "Stigma preventing students from seeking help",
-                "Limited access to culturally-sensitive support",
-                "Lack of early intervention systems",
-              ].map((challenge, i) => (
+              {challenges.map((challenge, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, x: -20 }}
@@ -134,23 +141,18 @@ const ServicesPage = () => {
               style={{ fontFamily: '"Bricolage Grotesque", sans-serif' }}
               className="text-lg md:text-xl text-gray-600 mb-4"
             >
-              Our Solution
+              {t("servicesPage.solution.title")}
             </p>
 
             <h2
               style={{ fontFamily: '"Bricolage Grotesque", sans-serif' }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[#00373E]"
             >
-              Comprehensive Digital Support System
+              {t("servicesPage.solution.heading")}
             </h2>
 
             <div className="space-y-4 mb-8">
-              {[
-                "24/7 AI-powered crisis intervention",
-                "Anonymous, stigma-free counseling",
-                "Culturally-appropriate therapy approaches",
-                "Data-driven early detection and prevention",
-              ].map((solution, i) => (
+              {solutions.map((solution, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, x: 20 }}
@@ -183,91 +185,25 @@ const ServicesPage = () => {
               style={{ fontFamily: '"Bricolage Grotesque", sans-serif' }}
               className="text-lg md:text-xl text-gray-600 mb-4"
             >
-              Five Core Services
+              {t("servicesPage.core.header.kicker")}
             </p>
             <h2
               style={{ fontFamily: '"Bricolage Grotesque", sans-serif' }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#00373E] mb-6"
             >
-              Everything You Need for
+              {t("servicesPage.core.header.title1")}
             </h2>
             <h2
               style={{ fontFamily: '"Bricolage Grotesque", sans-serif' }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#FF6B35]"
             >
-              Mental Wellness
+              {t("servicesPage.core.header.title2")}
             </h2>
           </motion.div>
 
           {/* Services Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {[
-              {
-                icon: "🤖",
-                title: "AI-Powered Support",
-                description:
-                  "Immediate crisis intervention and personalized coping strategies available 24/7.",
-                color: "#FF6B35",
-                features: [
-                  "Instant crisis response",
-                  "Personalized coping strategies",
-                  "Cultural sensitivity built-in",
-                  "Seamless escalation to humans",
-                ],
-              },
-              {
-                icon: "🔒",
-                title: "Anonymous Counseling",
-                description:
-                  "Complete privacy protection with professional counselors who understand student life.",
-                color: "#FF8FA3",
-                features: [
-                  "Complete anonymity guaranteed",
-                  "Multiple session formats",
-                  "Student-specialized counselors",
-                  "Same-day crisis appointments",
-                ],
-              },
-              {
-                icon: "📚",
-                title: "Learning Resources",
-                description:
-                  "Comprehensive mental health education in multiple Indian languages.",
-                color: "#4ECDC4",
-                features: [
-                  "Interactive learning modules",
-                  "Regional language support",
-                  "Cultural context integration",
-                  "Evidence-based content",
-                ],
-              },
-              {
-                icon: "👥",
-                title: "Peer Community",
-                description:
-                  "Connect with fellow students in moderated, supportive environments.",
-                color: "#45B7B8",
-                features: [
-                  "Peer support forums",
-                  "Trained student mentors",
-                  "Group therapy sessions",
-                  "Recovery story sharing",
-                ],
-              },
-              {
-                icon: "📊",
-                title: "Analytics Dashboard",
-                description:
-                  "Help institutions understand and improve mental health support systems.",
-                color: "#F38BA8",
-                features: [
-                  "Anonymous trend monitoring",
-                  "Risk pattern identification",
-                  "Resource optimization",
-                  "Policy recommendations",
-                ],
-              },
-            ].map((service, i) => (
+            {coreCards.map((service, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 50 }}
@@ -327,7 +263,7 @@ const ServicesPage = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  Learn More
+                  {t("servicesPage.core.cta")}
                 </motion.button>
               </motion.div>
             ))}
@@ -349,96 +285,33 @@ const ServicesPage = () => {
               style={{ fontFamily: '"Bricolage Grotesque", sans-serif' }}
               className="text-lg md:text-xl text-gray-600 mb-4"
             >
-              What Makes Us Different
+              {t("servicesPage.why.header.kicker")}
             </p>
             <h2
               style={{ fontFamily: '"Bricolage Grotesque", sans-serif' }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#00373E] mb-6"
             >
-              Built for Indian Students,
+              {t("servicesPage.why.header.title1")}
             </h2>
             <h2
               style={{ fontFamily: '"Bricolage Grotesque", sans-serif' }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#FF6B35]"
             >
-              By People Who Care
+              {t("servicesPage.why.header.title2")}
             </h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                icon: "🇮🇳",
-                title: "Cultural Understanding",
-                description:
-                  "We understand Indian family dynamics, academic pressure, and cultural values that impact mental health.",
-                color: "#FF6B35",
-              },
-              {
-                icon: "🏫",
-                title: "Campus Integration",
-                description:
-                  "Seamlessly works with your college systems, academic calendar, and existing support structures.",
-                color: "#4ECDC4",
-              },
-              {
-                icon: "🔗",
-                title: "Real Human Connection",
-                description:
-                  "Direct access to local counselors and mental health professionals who understand your context.",
-                color: "#FF8FA3",
-              },
-              {
-                icon: "📈",
-                title: "Data-Driven Care",
-                description:
-                  "Anonymous insights help institutions improve support while protecting your privacy completely.",
-                color: "#45B7B8",
-              },
-              {
-                icon: "🆓",
-                title: "Accessible to All",
-                description:
-                  "Free, open-source platform designed for colleges with limited resources and infrastructure.",
-                color: "#F38BA8",
-              },
-              {
-                icon: "🛡️",
-                title: "Privacy First",
-                description:
-                  "Your identity stays completely anonymous while you get the professional help you deserve.",
-                color: "#00373E",
-              },
-            ].map((feature, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1, duration: 0.6 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5, transition: { duration: 0.3 } }}
-                className="text-center p-8"
-              >
-                <motion.div
-                  className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
-                  style={{ backgroundColor: feature.color }}
-                  whileHover={{ scale: 1.1, rotate: 10 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <span className="text-3xl">{feature.icon}</span>
-                </motion.div>
-
-                <h3
-                  style={{ fontFamily: '"Bricolage Grotesque", sans-serif' }}
-                  className="text-xl font-bold text-[#00373E] mb-4"
-                >
-                  {feature.title}
+            {whyCards.map((card, i) => (
+              <div key={i} className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
+                <div className="w-14 h-14 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: card.color }}>
+                  <span className="text-2xl">{card.icon}</span>
+                </div>
+                <h3 className="text-xl font-bold text-[#00373E] mb-2" style={{ fontFamily: '"Bricolage Grotesque", sans-serif' }}>
+                  {card.title}
                 </h3>
-
-                <p className="text-gray-600 leading-relaxed">
-                  {feature.description}
-                </p>
-              </motion.div>
+                <p className="text-gray-600 leading-relaxed">{card.description}</p>
+              </div>
             ))}
           </div>
         </div>
