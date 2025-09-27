@@ -18,6 +18,7 @@ import GamifiedChallenges from "./pages/Gamified";
 import EmergencyPage from "./pages/Emergency";
 import CollegeDashboard from "./pages/College";
 import CopingStrategies from "./pages/Coping";
+import Bookings from "./pages/Bookings";
 
 function App() {
   return (
@@ -37,8 +38,9 @@ function App() {
         <Route path="/login" element={<LoginPage/>} />
         <Route path="/resources" element={<MentalHealthResources/>} />
         <Route path="/bot" element={<Bot/>} />
+        <Route path="/bookings" element={<Bookings/>} />
+        <Route path="/booking" element={<Bookings/>} />
         <Route path="/emergency" element={<Emergency />} />
-        <Route path="*" element={<NotFound />} />
         <Route path="/college" element={<CollegeDashboard/>} />
         <Route path="*" element={<NotFound />} />
       </Routes>

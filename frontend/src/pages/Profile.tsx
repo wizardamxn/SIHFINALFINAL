@@ -509,7 +509,8 @@ const ProfileSection: React.FC = () => {
               { id: 'sessions', label: 'Counseling', icon: <Calendar size={18} /> },
               { id: 'posts', label: 'My Posts', icon: <MessageCircle size={18} /> },
               { id: 'goals', label: 'Goals', icon: <Target size={18} /> },
-{ id: 'journal', label: 'Journal', icon: <BookOpen size={18} /> },
+              { id: 'journal', label: 'Journal', icon: <BookOpen size={18} /> },
+              { id: 'book', label: '📅 Book' },
               { id: 'activity', label: 'Activity', icon: <Activity size={18} /> }
             ].map((tab) => (
               tab.id === 'activity' ? (
@@ -519,6 +520,14 @@ const ProfileSection: React.FC = () => {
                   className={`flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all text-[#00373E] hover:bg-[#84DCC6]/20`}
                 >
                   {tab.icon}
+                  <span>{tab.label}</span>
+                </Link>
+              ) : tab.id === 'book' ? (
+                <Link
+                  key={tab.id}
+                  to="/bookings"
+                  className={`flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all text-[#00373E] hover:bg-[#84DCC6]/20`}
+                >
                   <span>{tab.label}</span>
                 </Link>
               ) : (
