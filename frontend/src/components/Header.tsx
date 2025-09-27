@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { motion } from "motion/react";
+import LanguageSwitcher from "./LanguageSwitcher";
 import {
   Navbar,
   NavBody,
@@ -14,14 +17,15 @@ import {
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { t } = useTranslation();
 
   const navLinks = [
-    { name: "Home", link: "/" },
-    { name: "About", link: "#about" },
-    { name: "Services", link: "/services" },
-    { name: "Contact", link: "#contact" },
-    { name: "Resources", link: "#resources" },
-    { name: "Therapists", link: "#therapists" },
+    { name: t("nav.home"), link: "/" },
+    { name: t("nav.services"), link: "/services" },
+    { name: t("nav.community"), link: "/community" },
+    { name: t("nav.resources"), link: "/resources" },
+    { name: t("nav.nearme"), link: "/nearme" },
+    { name: t("nav.profile"), link: "/profile" },
   ];
 
   return (
@@ -31,7 +35,19 @@ const Header = () => {
         <NavBody>
           <NavbarLogo />
           <NavItems items={navLinks} />
-          <NavbarButton href="#signup">Sign Up</NavbarButton>
+          <motion.div
+            className="flex items-center gap-4 md:gap-5"
+            initial={{ opacity: 0, y: -4 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="shrink-0">
+              <LanguageSwitcher />
+            </div>
+            <NavbarButton href="/login" className="shrink-0">
+              {t("cta.signup")}
+            </NavbarButton>
+          </motion.div>
         </NavBody>
 
         {/* Mobile Navbar */}
@@ -66,8 +82,11 @@ const Header = () => {
                 </a>
               )
             )}
-            <NavbarButton href="#signup" className="mt-4 w-full text-center">
-              Sign Up
+            <div className="px-4">
+              <LanguageSwitcher />
+            </div>
+            <NavbarButton href="/login" className="mt-4 w-full text-center">
+              {t("cta.signup")}
             </NavbarButton>
           </MobileNavMenu>
         </MobileNav>

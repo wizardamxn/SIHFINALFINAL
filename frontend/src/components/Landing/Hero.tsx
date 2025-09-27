@@ -1,6 +1,9 @@
 import { motion } from "motion/react";
+import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
+  const { t } = useTranslation();
   return (
     <section className="w-full min-h-screen rounded-3xl bg-[url('/HeroBG.png')] bg-cover bg-center flex items-center justify-center md:w-[90%] mx-auto overflow-clip px-4">
       <motion.div
@@ -22,14 +25,14 @@ const Hero = () => {
           variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
           className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl"
         >
-          Support for Your
+          {t("home.hero.headline1")}
         </motion.span>
 
         <motion.span
           variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
           className="text-4xl sm:text-6xl md:text-7xl lg:text-9xl"
         >
-          Mental Well-being
+          {t("home.hero.headline2")}
         </motion.span>
 
         {/* Subtext */}
@@ -37,22 +40,26 @@ const Hero = () => {
           variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
           className="text-base md:text-lg lg:text-2xl font-normal"
         >
-          Connect with licensed therapists, counselors,
+          {t("home.hero.sub1")}
         </motion.p>
         <motion.p
           variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
           className="text-base md:text-lg lg:text-2xl font-normal"
         >
-          and wellness coaches to support your journey.
+          {t("home.hero.sub2")}
         </motion.p>
 
         {/* Button */}
-        <motion.button
+        <motion.div
           variants={{ hidden: { opacity: 0, scale: 0.8 }, visible: { opacity: 1, scale: 1 } }}
-          className="rounded-full mt-10 text-white text-lg font-bold px-8 py-3 bg-[#00373E] hover:scale-110 transition-transform"
         >
-          Get Started
-        </motion.button>
+          <Link
+            to="/login"
+            className="rounded-full mt-10 inline-block text-white text-lg font-bold px-8 py-3 bg-[#00373E] hover:scale-110 transition-transform"
+          >
+            {t("home.hero.cta")}
+          </Link>
+        </motion.div>
       </motion.div>
     </section>
   );

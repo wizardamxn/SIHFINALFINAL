@@ -1,6 +1,8 @@
 import { motion } from "motion/react";
+import { useTranslation } from "react-i18next";
 
 const HowItWorks = () => {
+  const { t } = useTranslation();
   return (
     <section className="flex items-center justify-center w-full min-h-screen px-4">
       <motion.div
@@ -17,47 +19,46 @@ const HowItWorks = () => {
             style={{ fontFamily: '"Bricolage Grotesque", sans-serif' }}
             className="m-2 text-lg md:text-xl text-gray-600"
           >
-            How It Works
+            {t("home.howItWorks.title")}
           </p>
 
           <p
             style={{ fontFamily: '"Bricolage Grotesque", sans-serif' }}
             className="m-2 text-4xl md:text-6xl lg:text-7xl font-bold"
           >
-            We Help You
+            {t("home.howItWorks.headline1")}
           </p>
 
           <p
             style={{ fontFamily: '"Bricolage Grotesque", sans-serif' }}
             className="m-2 text-4xl md:text-6xl lg:text-7xl font-bold"
           >
-            Prioritize Your
+            {t("home.howItWorks.headline2")}
           </p>
 
           <p
             style={{ fontFamily: '"Bricolage Grotesque", sans-serif' }}
             className="m-2 text-4xl md:text-6xl lg:text-7xl font-bold text-[#00373E]"
           >
-            Mental Health
+            {t("home.howItWorks.headline3")}
           </p>
 
           <p
             style={{ fontFamily: '"Bricolage Grotesque", sans-serif' }}
             className="m-2 text-base md:text-lg text-gray-700 max-w-lg"
           >
-            Browse therapists, book a session, and start your healing journey
-            with trusted professionals.
+            {t("home.howItWorks.desc")}
           </p>
 
           <button className="rounded-full mt-10 text-white text-lg font-bold px-6 py-3 bg-[#00373E] hover:scale-110 transition-transform cursor-pointer flex justify-center items-center">
-            Chat with Kamlesh
+            {t("home.howItWorks.cta")}
           </button>
         </motion.div>
 
         {/* Right Section (Image) */}
         <motion.img
           src="/HowItWorks.png"
-          alt="Therapist illustration"
+          alt={t("home.howItWorks.imageAlt")}
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}

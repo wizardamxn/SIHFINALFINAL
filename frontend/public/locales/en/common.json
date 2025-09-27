@@ -1,0 +1,283 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "contact": "Contact",
+    "resources": "Resources",
+    "therapists": "Therapists",
+    "community": "Community",
+    "nearme": "Near Me",
+    "profile": "Profile"
+  },
+  "cta": {
+    "signup": "Sign Up"
+  },
+  "general": {
+    "loading": "Loading…"
+  },
+  "home": {
+    "hero": {
+      "headline1": "Support for Your",
+      "headline2": "Mental Well-being",
+      "sub1": "Connect with licensed therapists, counselors,",
+      "sub2": "and wellness coaches to support your journey.",
+      "cta": "Get Started"
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "headline1": "We Help You",
+      "headline2": "Prioritize Your",
+      "headline3": "Mental Health",
+      "desc": "Browse therapists, book a session, and start your healing journey with trusted professionals.",
+      "cta": "Chat with Kamlesh",
+      "imageAlt": "Therapist illustration"
+    }
+  },
+  "login": {
+    "title": "Welcome Back",
+    "subtitle": "Sign in to continue your wellness journey",
+    "emailLabel": "Email Address",
+    "emailPlaceholder": "Enter your email",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "togglePassword": "Toggle password visibility",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot password?",
+    "signingIn": "Signing In...",
+    "signIn": "Sign In",
+    "orContinueWith": "or continue with",
+    "continueGoogle": "Continue with Google",
+    "continueApple": "Continue with Apple",
+    "noAccount": "Don't have an account?",
+    "signUpHere": "Sign up here"
+  },
+
+  "servicesPage": {
+    "hero": {
+      "kicker": "Comprehensive Mental Health Platform",
+      "title1": "Support for Every",
+      "title2": "Student's Journey",
+      "subtitle": "From AI-powered crisis support to confidential counseling sessions, we're building a comprehensive digital platform that understands the unique mental health challenges faced by Indian college students.",
+      "cta": "Explore Our Services"
+    },
+    "challenge": {
+      "title": "The Challenge",
+      "heading": "Mental Health Crisis in Higher Education",
+      "items": [
+        "Rising anxiety and depression among students",
+        "Stigma preventing students from seeking help",
+        "Limited access to culturally-sensitive support",
+        "Lack of early intervention systems"
+      ]
+    },
+    "solution": {
+      "title": "Our Solution",
+      "heading": "Comprehensive Digital Support System",
+      "items": [
+        "24/7 AI-powered crisis intervention",
+        "Anonymous, stigma-free counseling",
+        "Culturally-appropriate therapy approaches",
+        "Data-driven early detection and prevention"
+      ]
+    },
+    "core": {
+      "header": {
+        "kicker": "Five Core Services",
+        "title1": "Everything You Need for",
+        "title2": "Mental Wellness"
+      },
+      "cta": "Learn More",
+      "cards": [
+        {
+          "icon": "🤖",
+          "title": "AI-Powered Support",
+          "description": "Immediate crisis intervention and personalized coping strategies available 24/7.",
+          "color": "#FF6B35",
+          "features": [
+            "Instant crisis response",
+            "Personalized coping strategies",
+            "Cultural sensitivity built-in",
+            "Seamless escalation to humans"
+          ]
+        },
+        {
+          "icon": "🔒",
+          "title": "Anonymous Counseling",
+          "description": "Complete privacy protection with professional counselors who understand student life.",
+          "color": "#FF8FA3",
+          "features": [
+            "Complete anonymity guaranteed",
+            "Multiple session formats",
+            "Student-specialized counselors",
+            "Same-day crisis appointments"
+          ]
+        },
+        {
+          "icon": "📚",
+          "title": "Learning Resources",
+          "description": "Comprehensive mental health education in multiple Indian languages.",
+          "color": "#4ECDC4",
+          "features": [
+            "Interactive learning modules",
+            "Regional language support",
+            "Cultural context integration",
+            "Evidence-based content"
+          ]
+        },
+        {
+          "icon": "👥",
+          "title": "Peer Community",
+          "description": "Connect with fellow students in moderated, supportive environments.",
+          "color": "#45B7B8",
+          "features": [
+            "Peer support forums",
+            "Trained student mentors",
+            "Group therapy sessions",
+            "Recovery story sharing"
+          ]
+        },
+        {
+          "icon": "📊",
+          "title": "Analytics Dashboard",
+          "description": "Help institutions understand and improve mental health support systems.",
+          "color": "#F38BA8",
+          "features": [
+            "Anonymous trend monitoring",
+            "Risk pattern identification",
+            "Resource optimization",
+            "Policy recommendations"
+          ]
+        }
+      ]
+    },
+    "why": {
+      "header": {
+        "kicker": "What Makes Us Different",
+        "title1": "Built for Indian Students,",
+        "title2": "By People Who Care"
+      },
+      "cards": [
+        {
+          "icon": "🇮🇳",
+          "title": "Cultural Understanding",
+          "description": "We understand Indian family dynamics, academic pressure, and cultural values that impact mental health.",
+          "color": "#FF6B35"
+        },
+        {
+          "icon": "🏫",
+          "title": "Campus Integration",
+          "description": "Seamlessly works with your college systems, academic calendar, and existing support structures.",
+          "color": "#4ECDC4"
+        },
+        {
+          "icon": "🔗",
+          "title": "Real Human Connection",
+          "description": "Direct access to local counselors and mental health professionals who understand your context.",
+          "color": "#FF8FA3"
+        },
+        {
+          "icon": "📈",
+          "title": "Data-Driven Care",
+          "description": "Anonymous insights help institutions improve support while protecting your privacy completely.",
+          "color": "#45B7B8"
+        },
+        {
+          "icon": "🆓",
+          "title": "Accessible to All",
+          "description": "Affordable, inclusive, and multilingual platform designed for broad accessibility.",
+          "color": "#9ADBE8"
+        }
+      ]
+    }
+  },
+
+  "services": {
+    "header": {
+      "kicker": "COMPREHENSIVE SERVICES",
+      "title1": "Complete Mental Health",
+      "title2": "Support System",
+      "subtitle": "AI-powered support, professional counseling, and wellness resources designed specifically for students' mental health needs."
+    },
+    "ai": {
+      "title": "AI-Powered Mental Health Support",
+      "features": [
+        "24/7 intelligent chatbot with empathetic conversation",
+        "Voice and text-based emotional support sessions",
+        "Real-time mood tracking and wellness insights",
+        "Personalized coping strategies and breathing exercises"
+      ]
+    },
+    "resources": {
+      "title": "Interactive Wellness Resources",
+      "items": [
+        "Guided breathing exercises with calming videos",
+        "Interactive yoga sessions for stress relief",
+        "Meditation audio library with nature sounds",
+        "Visual wellness illustrations and mood boards"
+      ],
+      "cta": "Explore Resources"
+    },
+    "assess": {
+      "title": "AI Counseling & Assessment",
+      "items": [
+        "Voice-enabled AI counselor with natural conversations",
+        "Standardized mental health screening tools",
+        "Progress tracking with personalized insights",
+        "Crisis detection and immediate support routing"
+      ],
+      "cta": "Start Assessment"
+    },
+    "crisis": {
+      "title": "Crisis Intervention Services",
+      "features": [
+        "24/7 emergency mental health support hotline",
+        "AI-powered crisis detection and immediate response",
+        "Safety planning with personalized coping strategies",
+        "Professional referral network activation"
+      ],
+      "cta": "Emergency Support"
+    },
+    "tech": {
+      "title": "Advanced Technology Integration",
+      "items": [
+        "AI-powered emotional analysis and support",
+        "Voice-enabled therapy sessions with natural conversation",
+        "Real-time sentiment analysis and mood tracking",
+        "Personalized content recommendations based on needs"
+      ]
+    },
+    "value": {
+      "title": "Our Commitment to Excellence",
+      "privacy": {
+        "title": "Complete Privacy",
+        "items": [
+          "Anonymous support with secure data handling",
+          "End-to-end encrypted conversations",
+          "No personal information stored"
+        ]
+      },
+      "evidence": {
+        "title": "Evidence-Based Care",
+        "items": [
+          "Clinically validated wellness techniques",
+          "Research-backed therapeutic approaches",
+          "Continuous outcome measurement"
+        ]
+      },
+      "availability": {
+        "title": "Always Available",
+        "items": [
+          "24/7 AI support and crisis intervention",
+          "Multi-platform accessibility",
+          "Instant response to urgent needs"
+        ]
+      }
+    },
+    "cta": {
+      "prompt": "Ready to start your mental wellness journey with AI-powered support?",
+      "primary": "Start Your Journey",
+      "secondary": "Explore Resources"
+    }
+  }
+}

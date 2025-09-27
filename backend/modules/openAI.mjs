@@ -6,6 +6,14 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
+// Resolve Google Generative AI key from common env var names
+const GOOGLE_GENAI_KEY =
+  process.env.GOOGLE_API_KEY ||
+  process.env.GEMINI_API_KEY ||
+  process.env.GOOGLE_GENAI_API_KEY ||
+  process.env.GOOGLEAI_API_KEY ||
+  process.env.OPENAI_API_KEY; // last-resort fallback if user reused OPENAI_API_KEY
+
 const template = `
   You are Jack, a world traveler.
   You will always respond with a JSON array of messages, with a maximum of 3 messages:
@@ -22,9 +30,15 @@ const prompt = ChatPromptTemplate.fromMessages([
 ]);
 
 // --- Gemini model instead of OpenAI ---
+if (!GOOGLE_GENAI_KEY) {
+  throw new Error(
+    "Missing Google Generative AI key. Set GOOGLE_API_KEY (preferred) or GEMINI_API_KEY/GOOGLE_GENAI_API_KEY in backend/.env."
+  );
+}
+
 const model = new ChatGoogleGenerativeAI({
-  apiKey: process.env.OPENAI_API_KEY ,
-  model: "gemini-2.5-pro", 
+  apiKey: GOOGLE_GENAI_KEY,
+  model: "gemini-2.5-pro",
   temperature: 0.2,
 });
 

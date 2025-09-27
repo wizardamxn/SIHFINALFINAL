@@ -7,6 +7,7 @@ import {
   useScroll,
   useMotionValueEvent,
 } from "motion/react";
+import { Link } from "react-router-dom";
 
 import React, { useRef, useState } from "react";
 
@@ -28,6 +29,7 @@ interface NavItemsProps {
   }[];
   className?: string;
   onItemClick?: () => void;
+  visible?: boolean;
 }
 
 interface MobileNavProps {
@@ -85,24 +87,28 @@ export const Navbar = ({ children, className }: NavbarProps) => {
 export const NavBody = ({ children, className, visible }: NavBodyProps) => {
   return (
     <motion.div
+      layout
       animate={{
         backdropFilter: visible ? "blur(10px)" : "none",
         boxShadow: visible
           ? "0 0 24px rgba(34, 42, 53, 0.06), 0 1px 1px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(34, 42, 53, 0.04), 0 0 4px rgba(34, 42, 53, 0.08), 0 16px 68px rgba(47, 48, 55, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1) inset"
           : "none",
-        width: visible ? "40%" : "100%",
-        y: visible ? 20 : 0,
+        y: visible ? 8 : 0,
+        scale: visible ? 0.92 : 1,
+        paddingLeft: visible ? 10 : 16,
+        paddingRight: visible ? 10 : 16,
+        paddingTop: visible ? 4 : 8,
+        paddingBottom: visible ? 4 : 8,
+        borderRadius: visible ? 20 : 32,
       }}
       transition={{
         type: "spring",
-        stiffness: 200,
-        damping: 50,
+        stiffness: 360,
+        damping: 30,
       }}
-      style={{
-        minWidth: "800px",
-      }}
+      style={{ maxWidth: visible ? 960 : 1280 }}
       className={cn(
-        "relative z-[60] mx-auto hidden w-full max-w-7xl flex-row items-center justify-between self-start rounded-full bg-transparent px-4 py-2 lg:flex dark:bg-transparent",
+        "relative z-[60] mx-auto hidden w-full flex-row items-center justify-between self-start rounded-full bg-transparent px-4 py-2 lg:flex dark:bg-transparent",
         visible && "bg-white/80 dark:bg-neutral-950/80",
         className
       )}
@@ -119,26 +125,45 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
     <motion.div
       onMouseLeave={() => setHovered(null)}
       className={cn(
-        "absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium text-zinc-600 transition duration-200 hover:text-zinc-800 lg:flex lg:space-x-2",
+        // Reserve space on left (logo) and right (controls) so centered items never collide
+        "absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 px-0 pl-28 pr-44 md:pl-40 md:pr-56 text-sm font-medium text-zinc-600 transition duration-200 hover:text-zinc-800 lg:flex lg:space-x-2",
         className
       )}
     >
       {items.map((item, idx) => (
-        <a
-          onMouseEnter={() => setHovered(idx)}
-          onClick={onItemClick}
-          className="relative px-4 py-2 text-neutral-600 dark:text-neutral-300"
-          key={`link-${idx}`}
-          href={item.link}
-        >
-          {hovered === idx && (
-            <motion.div
-              layoutId="hovered"
-              className="absolute inset-0 h-full w-full rounded-full bg-gray-100 dark:bg-neutral-800"
-            />
-          )}
-          <span className="relative z-20">{item.name}</span>
-        </a>
+        item.link.startsWith("/") ? (
+          <Link
+            onMouseEnter={() => setHovered(idx)}
+            onClick={onItemClick}
+            className="relative px-4 py-2 text-neutral-600 dark:text-neutral-300"
+            key={`link-${idx}`}
+            to={item.link}
+          >
+            {hovered === idx && (
+              <motion.div
+                layoutId="hovered"
+                className="absolute inset-0 h-full w-full rounded-full bg-gray-100 dark:bg-neutral-800"
+              />
+            )}
+            <span className="relative z-20">{item.name}</span>
+          </Link>
+        ) : (
+          <a
+            onMouseEnter={() => setHovered(idx)}
+            onClick={onItemClick}
+            className="relative px-4 py-2 text-neutral-600 dark:text-neutral-300"
+            key={`link-${idx}`}
+            href={item.link}
+          >
+            {hovered === idx && (
+              <motion.div
+                layoutId="hovered"
+                className="absolute inset-0 h-full w-full rounded-full bg-gray-100 dark:bg-neutral-800"
+              />
+            )}
+            <span className="relative z-20">{item.name}</span>
+          </a>
+        )
       ))}
     </motion.div>
   );
