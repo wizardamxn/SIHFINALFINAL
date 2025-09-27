@@ -36,7 +36,7 @@ const Header = () => {
           <NavbarLogo />
           <NavItems items={navLinks} />
           <motion.div
-            className="flex items-center gap-4 md:gap-5"
+            className="flex items-center gap-6 md:gap-7"
             initial={{ opacity: 0, y: -4 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
@@ -44,7 +44,7 @@ const Header = () => {
             <div className="shrink-0">
               <LanguageSwitcher />
             </div>
-            <NavbarButton href="/login" className="shrink-0">
+            <NavbarButton as={Link} to="/login" className="shrink-0">
               {t("cta.signup")}
             </NavbarButton>
           </motion.div>
@@ -85,7 +85,7 @@ const Header = () => {
             <div className="px-4">
               <LanguageSwitcher />
             </div>
-            <NavbarButton href="/login" className="mt-4 w-full text-center">
+            <NavbarButton as={Link} to="/login" className="mt-4 w-full text-center">
               {t("cta.signup")}
             </NavbarButton>
           </MobileNavMenu>

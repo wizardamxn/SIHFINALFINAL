@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 const HowItWorks = () => {
   const { t } = useTranslation();
@@ -50,9 +51,12 @@ const HowItWorks = () => {
             {t("home.howItWorks.desc")}
           </p>
 
-          <button className="rounded-full mt-10 text-white text-lg font-bold px-6 py-3 bg-[#00373E] hover:scale-110 transition-transform cursor-pointer flex justify-center items-center">
+          <Link
+            to="/bot"
+            className="rounded-full mt-10 text-white text-lg font-bold px-6 py-3 bg-[#00373E] hover:scale-110 transition-transform cursor-pointer flex justify-center items-center"
+          >
             {t("home.howItWorks.cta")}
-          </button>
+          </Link>
         </motion.div>
 
         {/* Right Section (Image) */}

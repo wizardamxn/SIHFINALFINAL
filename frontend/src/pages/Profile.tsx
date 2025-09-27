@@ -33,6 +33,8 @@ import {
   Eye,
   Share2
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import MoodJournal from '@/components/Journal';
 
 // Enhanced interfaces for mental health data
 interface MoodEntry {
@@ -506,20 +508,33 @@ const ProfileSection: React.FC = () => {
               { id: 'metrics', label: 'Health Metrics', icon: <Heart size={18} /> },
               { id: 'sessions', label: 'Counseling', icon: <Calendar size={18} /> },
               { id: 'posts', label: 'My Posts', icon: <MessageCircle size={18} /> },
-              { id: 'goals', label: 'Goals', icon: <Target size={18} /> }
+              { id: 'goals', label: 'Goals', icon: <Target size={18} /> },
+{ id: 'journal', label: 'Journal', icon: <BookOpen size={18} /> },
+              { id: 'activity', label: 'Activity', icon: <Activity size={18} /> }
             ].map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id as any)}
-                className={`flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all ${
-                  activeTab === tab.id
-                    ? 'bg-gradient-to-r from-[#00373E] to-[#004A56] text-white shadow-lg'
-                    : 'text-[#00373E] hover:bg-[#84DCC6]/20'
-                }`}
-              >
-                {tab.icon}
-                <span>{tab.label}</span>
-              </button>
+              tab.id === 'activity' ? (
+                <Link
+                  key={tab.id}
+                  to="/gamified"
+                  className={`flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all text-[#00373E] hover:bg-[#84DCC6]/20`}
+                >
+                  {tab.icon}
+                  <span>{tab.label}</span>
+                </Link>
+              ) : (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id as any)}
+                  className={`flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all ${
+                    activeTab === tab.id
+                      ? 'bg-gradient-to-r from-[#00373E] to-[#004A56] text-white shadow-lg'
+                      : 'text-[#00373E] hover:bg-[#84DCC6]/20'
+                  }`}
+                >
+                  {tab.icon}
+                  <span>{tab.label}</span>
+                </button>
+              )
             ))}
           </div>
         </div>
@@ -1200,6 +1215,7 @@ const ProfileSection: React.FC = () => {
             </div>
           </div>
         )}
+        {activeTab === 'journal' && (<div><MoodJournal/></div>)}
       </div>
 
       {/* ✅ ADDED: Modal Components */}

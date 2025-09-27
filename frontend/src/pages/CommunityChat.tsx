@@ -55,26 +55,26 @@ interface UserVotes {
 const mockPosts: Post[] = [
   {
     id: '1',
-    title: 'What are your thoughts on the new React 19 features?',
-    content: "I've been exploring the new concurrent features and the improved hooks. The performance improvements seem significant, especially for complex applications. Has anyone tried implementing these in production yet?",
-    author: 'DevEnthusiast',
+    title: 'Struggling with anxiety before exams',
+    content: "I've been feeling very anxious with my exams coming up. I can’t seem to focus, and the pressure is overwhelming. Has anyone found healthy ways to cope with exam stress?",
+    author: 'StudentLife',
     timestamp: '2 hours ago',
     upvotes: 42,
     downvotes: 3,
-    category: 'Technology',
+    category: 'Anxiety',
     comments: [
       {
         id: 'c1',
-        content: "I've been using the beta version and it's amazing! The automatic batching really helps with performance.",
-        author: 'ReactFan',
+        content: "Deep breathing and short study breaks really help me. Also, reminding myself that grades don’t define my worth reduces some pressure.",
+        author: 'MindfulLearner',
         timestamp: '1 hour ago',
         upvotes: 15,
         downvotes: 0,
         replies: [
           {
             id: 'c1r1',
-            content: "Could you share some specific examples? I'm curious about the implementation details.",
-            author: 'CuriousCoder',
+            content: "That sounds helpful! Do you follow any particular breathing technique or app?",
+            author: 'CuriousSoul',
             timestamp: '45 minutes ago',
             upvotes: 8,
             downvotes: 0,
@@ -84,8 +84,8 @@ const mockPosts: Post[] = [
       },
       {
         id: 'c2',
-        content: 'Still waiting for more stable releases before adopting in production. The breaking changes seem substantial.',
-        author: 'CautiousDev',
+        content: "I try to talk with friends before exams. Sharing my worries makes them feel lighter.",
+        author: 'SupportiveFriend',
         timestamp: '30 minutes ago',
         upvotes: 7,
         downvotes: 2
@@ -94,18 +94,18 @@ const mockPosts: Post[] = [
   },
   {
     id: '2',
-    title: 'Best practices for state management in large applications?',
-    content: 'Working on a project with multiple teams and we\'re debating between Redux Toolkit, Zustand, and Context API. What has worked best for your team?',
-    author: 'TeamLead2024',
+    title: 'Best coping strategies for loneliness?',
+    content: "Lately, I’ve been feeling very isolated. I want to build healthier ways to cope with loneliness without relying too much on social media. Any advice?",
+    author: 'SeekingPeace',
     timestamp: '4 hours ago',
     upvotes: 28,
     downvotes: 1,
-    category: 'Discussion',
+    category: 'Loneliness',
     comments: [
       {
         id: 'c3',
-        content: 'Redux Toolkit has been solid for us. The DevTools integration and middleware support are invaluable for debugging.',
-        author: 'StateManager',
+        content: "Journaling and going for evening walks have really helped me. It creates a routine and gives me something positive to look forward to.",
+        author: 'HopefulWriter',
         timestamp: '3 hours ago',
         upvotes: 12,
         downvotes: 1
@@ -114,13 +114,13 @@ const mockPosts: Post[] = [
   },
   {
     id: '3',
-    title: 'Sharing my weekend project: A TypeScript utility library',
-    content: 'Built a small utility library for common TypeScript patterns. It includes type-safe event emitters, async helpers, and validation utilities. Open to feedback!',
-    author: 'WeekendHacker',
+    title: 'Sharing my progress: 30 days of meditation',
+    content: "I committed to meditating daily for 30 days. It’s been tough at first, but I feel calmer and more focused now. Just wanted to share and maybe inspire someone to give it a try!",
+    author: 'CalmSeeker',
     timestamp: '6 hours ago',
     upvotes: 67,
     downvotes: 2,
-    category: 'Show & Tell',
+    category: 'Positive Stories',
     comments: []
   }
 ];
@@ -143,7 +143,7 @@ const CommunityChat: React.FC = () => {
   const [userVotes, setUserVotes] = useState<UserVotes>({ posts: {}, comments: {} });
   const [replyingTo, setReplyingTo] = useState<string | null>(null);
   const [expandedReplies, setExpandedReplies] = useState<{[key: string]: boolean}>({});
-  const [currentUser] = useState('CurrentUser');
+  const [currentUser] = useState('Anon');
 
   // Your existing functions remain the same
   const generateId = useCallback(() => {
@@ -692,11 +692,11 @@ const handleVoteComment = useCallback((postId: string, commentId: string, type: 
                   <div className="flex items-center gap-4 text-[#84DCC6]/80 text-sm">
                     <div className="flex items-center gap-1">
                       <Users size={14} />
-                      <span>1.2k Members</span>
+                      <span>15 Members</span>
                     </div>
                     <div className="flex items-center gap-1">
                       <TrendingUp size={14} />
-                      <span>42 Active</span>
+                      <span>4 Active</span>
                     </div>
                   </div>
                 </div>
@@ -727,7 +727,7 @@ const handleVoteComment = useCallback((postId: string, commentId: string, type: 
                     ) : (
                       <>
                         <Plus size={18} />
-                        <Sparkles size={16} />
+                     
                         <span>New Post</span>
                       </>
                     )}

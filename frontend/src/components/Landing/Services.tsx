@@ -120,9 +120,9 @@ const Services = () => {
                 </div>
               ))}
             </div>
-            <button className="bg-[#84DCC6] text-[#00373E] px-6 py-3 rounded-full font-semibold hover:bg-[#6fb3a0] transition-colors">
+            <Link to="/services" className="bg-[#84DCC6] text-[#00373E] px-6 py-3 rounded-full font-semibold hover:bg-[#6fb3a0] transition-colors">
               {t("services.resources.cta")}
-            </button>
+            </Link>
           </motion.div>
 
           {/* AI Counseling & Assessment */}
@@ -154,9 +154,9 @@ const Services = () => {
                 </div>
               ))}
             </div>
-            <button className="bg-[#FFD37D] text-[#00373E] px-6 py-3 rounded-full font-semibold hover:bg-[#e6c06e] transition-colors">
+            <Link to="/screening" className="bg-[#FFD37D] text-[#00373E] px-6 py-3 rounded-full font-semibold hover:bg-[#e6c06e] transition-colors">
               {t("services.assess.cta")}
-            </button>
+            </Link>
           </motion.div>
         </motion.div>
 
@@ -192,9 +192,9 @@ const Services = () => {
                 </div>
               ))}
             </div>
-            <button className="bg-[#FFD37D] text-[#00373E] px-8 py-4 rounded-full font-bold hover:bg-[#e6c06e] transition-colors mt-6">
+            <Link to="/emergency" className="bg-[#FFD37D] text-[#00373E] px-8 py-4 rounded-full font-bold hover:bg-[#e6c06e] transition-colors mt-6">
               {t("services.crisis.cta")}
-            </button>
+            </Link>
           </div>
         </motion.div>
 
@@ -311,9 +311,9 @@ const Services = () => {
             <Link to="/login" className="bg-[#00373E] text-white px-10 py-4 rounded-full font-semibold hover:bg-[#004a52] transition-colors text-lg">
               {t("services.cta.primary")}
             </Link>
-            <button className="bg-[#84DCC6] text-[#00373E] px-10 py-4 rounded-full font-semibold hover:bg-[#6fb3a0] transition-colors text-lg">
+            <Link to="/services" className="bg-[#84DCC6] text-[#00373E] px-10 py-4 rounded-full font-semibold hover:bg-[#6fb3a0] transition-colors text-lg">
               {t("services.cta.secondary")}
-            </button>
+            </Link>
           </div>
         </motion.div>
       </div>
