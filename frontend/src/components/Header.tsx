@@ -24,8 +24,7 @@ const Header = () => {
     { name: t("nav.services"), link: "/services" },
     { name: t("nav.community"), link: "/community" },
     { name: t("nav.resources"), link: "/resources" },
-    { name: t("nav.nearme"), link: "/nearme" },
-    { name: t("nav.profile"), link: "/profile" },
+    { name: "📅 Book", link: "/booking" },
   ];
 
   return (
