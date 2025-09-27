@@ -126,7 +126,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
       onMouseLeave={() => setHovered(null)}
       className={cn(
         // Reserve space on left (logo) and right (controls) so centered items never collide
-        "absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 px-0 pl-28 pr-44 md:pl-40 md:pr-56 text-sm font-medium text-zinc-600 transition duration-200 hover:text-zinc-800 lg:flex lg:space-x-2",
+        "absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 px-0 pl-28 pr-52 sm:pl-32 sm:pr-60 md:pl-40 md:pr-72 lg:pl-48 lg:pr-80 text-sm font-medium text-zinc-600 transition duration-200 hover:text-zinc-800 lg:flex lg:space-x-2",
         className
       )}
     >

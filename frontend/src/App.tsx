@@ -12,6 +12,7 @@ import LoginPage from "./pages/Login";
 import Bot from "./pages/Bot";
 import NotFound from "./pages/NotFound";
 import Female from "./pages/Female";
+import Emergency from "./pages/Emergency";
 import ScrollToTop from "./components/ScrollToTop";
 import GamifiedChallenges from "./pages/Gamified";
 import EmergencyPage from "./pages/Emergency";
@@ -36,7 +37,8 @@ function App() {
         <Route path="/login" element={<LoginPage/>} />
         <Route path="/resources" element={<MentalHealthResources/>} />
         <Route path="/bot" element={<Bot/>} />
-        <Route path="/coping" element={<CopingStrategies/>} />
+        <Route path="/emergency" element={<Emergency />} />
+        <Route path="*" element={<NotFound />} />
         <Route path="/college" element={<CollegeDashboard/>} />
         <Route path="*" element={<NotFound />} />
       </Routes>
